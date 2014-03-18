@@ -1,6 +1,6 @@
 # topTracks2playlist
 
-*topTracks2playlist* is a little script to retrieve for each given artist the top tracks, according to [last.fm](http://www.last.fm). Then it either prints them, or uses [mpc](http://www.musicpd.org/clients/mpc/) to generate a playlist usable with [mpd](http://www.musicpd.org/). Adding support for other players offering a command line interface should be fairly easy.
+*topTracks2playlist* is a little script to retrieve for each given artist the top tracks (most listened tracks) according to [last.fm](http://www.last.fm). Then it either prints them, or uses [mpc](http://www.musicpd.org/clients/mpc/) to generate a playlist usable with [mpd](http://www.musicpd.org/). Adding support for other players offering a command line interface should be fairly easy.
 
 ## Usage
 
@@ -9,7 +9,7 @@
     -n      , --num    number of tracks per artist (default: 10)
     -o <arg>, --out    output file name for the generated playlist (default: topTracks.m3u)
     -p      , --print  just print the top tracks for the given artists
-                      instead of generating a playlist
+                       instead of generating a playlist
     -h      , --help   print this help and exit
 
 ## Examples
