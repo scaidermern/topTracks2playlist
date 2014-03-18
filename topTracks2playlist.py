@@ -95,8 +95,6 @@ if __name__ == '__main__':
         printUsage(sys.argv[0])
         sys.exit(0)
     
-
-    
     try:
         # get command line arguments
         opts, args = getopt.getopt(sys.argv[1:], 'n:o:ph', ["num=", "out=", "print", "help"])
