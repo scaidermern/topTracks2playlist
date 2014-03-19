@@ -1,6 +1,6 @@
 # topTracks2playlist
 
-*topTracks2playlist* is a little script to retrieve for each given artist the top tracks (most listened tracks) according to [last.fm](http://www.last.fm). Then it either prints them, or uses [mpc](http://www.musicpd.org/clients/mpc/) to generate a playlist usable with [mpd](http://www.musicpd.org/). Adding support for other players offering a command line interface should be fairly easy.
+*topTracks2playlist* is a little script to retrieve for each given artist the top tracks (most listened tracks) according to [last.fm](http://www.last.fm) with the help of [python-lastfm](https://code.google.com/p/python-lastfm/).  Then it either prints them, or uses [mpc](http://www.musicpd.org/clients/mpc/) to generate a playlist usable with [mpd](http://www.musicpd.org/). Adding support for other players offering a command line interface should be fairly easy.
 
 ## Usage
 
