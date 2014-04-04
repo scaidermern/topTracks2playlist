@@ -6,11 +6,12 @@
 
 *topTracks2playlist* has a few command line arguments:
 
-    -n      , --num    number of tracks per artist (default: 10)
-    -o <arg>, --out    output file name for the generated playlist (default: topTracks.m3u)
-    -p      , --print  just print the top tracks for the given artists
-                       instead of generating a playlist
-    -h      , --help   print this help and exit
+    -n      , --num      number of tracks per artist (default: 10)
+    -o <arg>, --out      output file name for the generated playlist (default: topTracks.m3u)
+    -p      , --print    just print the top tracks for the given artists
+                         instead of generating a playlist
+    -v      , --verbose  produce more verbose output in non-print mode
+    -h      , --help     print this help and exit
 
 ## Examples
 

@@ -84,11 +84,12 @@ def getMPDPaths(artist, track):
 def printUsage(name):
     print "usage:", name, "[OPTIONS] artist(s)"
     print "  generate playlist from most famous artist tracks"
-    print "  -n      , --num    number of tracks per artist (default: %s)" % numTracks
-    print "  -o <arg>, --out    output file name for the generated playlist (default: %s)" % outPlaylist
-    print "  -p      , --print  just print the top tracks for the given artists"
-    print "                     instead of generating a playlist"
-    print "  -h      , --help   print this help and exit"
+    print "  -n      , --num      number of tracks per artist (default: %s)" % numTracks
+    print "  -o <arg>, --out      output file name for the generated playlist (default: %s)" % outPlaylist
+    print "  -p      , --print    just print the top tracks for the given artists"
+    print "                       without generating a playlist"
+    print "  -v      , --verbose  produce more verbose output in non-print mode"
+    print "  -h      , --help     print this help and exit"
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
@@ -97,7 +98,7 @@ if __name__ == '__main__':
     
     try:
         # get command line arguments
-        opts, args = getopt.getopt(sys.argv[1:], 'n:o:ph', ["num=", "out=", "print", "help"])
+        opts, args = getopt.getopt(sys.argv[1:], 'n:o:pvh', ["num=", "out=", "print", "verbose", "help"])
     except getopt.GetoptError:
         usage(sys.argv[0])
         raise RuntimeError, 'invalid argument specified'
@@ -105,6 +106,7 @@ if __name__ == '__main__':
     numTracks   = defaultNumTracks
     outPlaylist = defaultOutPlaylist
     printOnly   = False
+    verbose     = False
     for opt, arg in opts:
         if   opt in ("-n", "--num"):
             numTracks = int(arg)
@@ -112,6 +114,8 @@ if __name__ == '__main__':
             outPlaylist = arg
         elif opt in ("-p", "--print"):
             printOnly = True
+        elif opt in ("-v", "--verbose"):
+            verbose = True
         elif opt in ("-h", "--help"):
             printUsage(sys.argv[0])
             sys.exit(0)
@@ -129,6 +133,8 @@ if __name__ == '__main__':
     for artist in args:
         if printOnly:
             print "%s:" % (artist)
+        elif verbose:
+            print "fetching top tracks for artist %s" % (artist)
         
         topTracks = getLastfmTopTracks(artist)
         for track in topTracks:
