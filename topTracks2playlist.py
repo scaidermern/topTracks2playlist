@@ -77,7 +77,7 @@ def getMPDPaths(artist, track):
     args = shlex.split(cmd.encode("utf-8"))
     output = subprocess.check_output(args)
     if len(output) == 0:
-        printCol('warning: no result from mpc for artist "%s" title "%s"' % (artist, track), yellow)
+        printCol('warning: no result from mpc for artist "%s" title "%s"' % (artist, track.encode("utf-8")), yellow)
     return output
 
 # print usage information
